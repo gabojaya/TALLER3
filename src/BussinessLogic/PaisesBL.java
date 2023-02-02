@@ -9,32 +9,27 @@ import BussinessLogic.Entities.Localidad;
 import DataAccess.LocalidadDAC;
 import Framework.AppException;
 
-public class LocalidadBL {
-    public List<Localidad> GetAllPaises() throws AppException{
+public class PaisesBL {
+    public List<Localidad> getAllPaises() throws AppException {
         try {
-            LocalidadDAC localidadDAC = new LocalidadDAC();  
+            LocalidadDAC localidadDAC = new LocalidadDAC();
             List<Localidad> paises = new ArrayList<Localidad>();
+
             ResultSet rs = localidadDAC.getAllPaises();
-            while(rs.next())    {
+            while (rs.next()) {
                 Localidad p = new Localidad(
-                    rs.getInt("IDLOCALIDAD"),
-                    rs.getInt("HID"),
-                    rs.getString("NOMBRE"),
-                    rs.getString("ESTADO"),
-                    rs.getInt("IDLOCALIDADTIPO"));
+                        rs.getInt("ID_LOCALIDAD"),
+                        rs.getInt("ID_LOCALIDAD_PADRE"),
+                        rs.getInt("ID_LOCALIDAD_TIPO"),
+                        rs.getString("NOMBRE"),
+                        rs.getString("ESTADO"));
                 paises.add(p);
             }
+            
             return paises;
-        } 
-        catch (SQLException e) {
+        } catch (SQLException e) {
             throw new AppException(e, getClass());
         }
 
-
-
     }
-
-
-
-
 }

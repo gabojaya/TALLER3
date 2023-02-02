@@ -1,30 +1,37 @@
 package BussinessLogic.Entities;
 
 public class Localidad {
-    private int     IDLOCALIDAD     ;
-    private int     HID             ;
-    private String  NOMBRE          ;
-    private String  ESTADO          ;  
-    private int     IDLOCALIDADTIPO ;
+    
+    private int         ID_LOCALIDAD;      
+    private int         ID_LOCALIDAD_PADRE; 
+    private int         ID_LOCALIDAD_TIPO;  
+    private String      NOMBRE;           
+    private String      ESTADO;
 
-    public Localidad (int IDLOCALIDAD, int HID, String NOMBRE, String ESTADO,int IDLOCALIDADTIPO){
-        this.IDLOCALIDAD = IDLOCALIDAD;
-        this.HID  = HID;          
-        this.NOMBRE   = NOMBRE;      
-        this.ESTADO     = ESTADO;    
-        this.IDLOCALIDADTIPO = IDLOCALIDADTIPO;
+    public Localidad(int iD_LOCALIDAD, int iD_LOCALIDAD_PADRE, int iD_LOCALIDAD_TIPO, String nOMBRE, String eSTADO) {
+        this.ID_LOCALIDAD = iD_LOCALIDAD;
+        this.ID_LOCALIDAD_PADRE = iD_LOCALIDAD_PADRE;
+        this.ID_LOCALIDAD_TIPO = iD_LOCALIDAD_TIPO;
+        this.NOMBRE = nOMBRE;
+        this.ESTADO = eSTADO;
     }
-    public int getIDLOCALIDAD() {
-        return IDLOCALIDAD;
+    public int getID_LOCALIDAD() {
+        return ID_LOCALIDAD;
     }
-    public void setIDLOCALIDAD(int iDLOCALIDAD) {
-        IDLOCALIDAD = iDLOCALIDAD;
+    public void setID_LOCALIDAD(int iD_LOCALIDAD) {
+        ID_LOCALIDAD = iD_LOCALIDAD;
     }
-    public int getHID() {
-        return HID;
+    public int getID_LOCALIDAD_PADRE() {
+        return ID_LOCALIDAD_PADRE;
     }
-    public void setHID(int hID) {
-        HID = hID;
+    public void setID_LOCALIDAD_PADRE(int iD_LOCALIDAD_PADRE) {
+        ID_LOCALIDAD_PADRE = iD_LOCALIDAD_PADRE;
+    }
+    public int getID_LOCALIDAD_TIPO() {
+        return ID_LOCALIDAD_TIPO;
+    }
+    public void setID_LOCALIDAD_TIPO(int iD_LOCALIDAD_TIPO) {
+        ID_LOCALIDAD_TIPO = iD_LOCALIDAD_TIPO;
     }
     public String getNOMBRE() {
         return NOMBRE;
@@ -37,13 +44,5 @@ public class Localidad {
     }
     public void setESTADO(String eSTADO) {
         ESTADO = eSTADO;
-    }
-    public int getIDLOCALIDADTIPO() {
-        return IDLOCALIDADTIPO;
-    }
-    public void setIDLOCALIDADTIPO(int iDLOCALIDADTIPO) {
-        IDLOCALIDADTIPO = iDLOCALIDADTIPO;
-    }
-           
-    
+    } 
 }
